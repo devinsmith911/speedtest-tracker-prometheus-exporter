@@ -29,6 +29,8 @@ jobs:
           images: devinsmith/speedtest-prometheus-exporter
           tags: |
             type=semver,pattern={{version}}
+          flavor: |
+            latest=false
       -
         name: Build and push
         uses: docker/build-push-action@v5
