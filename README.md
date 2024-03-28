@@ -27,3 +27,5 @@ The exporter expects the following environment variables:
 | SPEEDTEST_API_URL        |   Yes   | None |
 | URL_SUBPATH          |   No   | /api/speedtest/latest |
 | METRICS_ENDPOINT    |  No   | /metrics |
+| PORT    |  No   | 8080 |
+| LOG_LEVEL    |  No   | INFO |
