@@ -27,4 +27,4 @@ jobs:
         with:
           push: true
           platforms: linux/arm64, linux/amd64
-          tags: devinsmith/speedtest-prometheus-exporter:$GITHUB_REF_NAME
+          tags: devinsmith/speedtest-prometheus-exporter:${GITHUB_REF##*/}
