@@ -29,3 +29,27 @@ The exporter expects the following environment variables:
 | METRICS_ENDPOINT    |  No   | /metrics | Endpoint on which this exporter exposes Prometheus metrics
 | PORT    |  No   | 8080 | Port for this exporter to expose metrics
 | LOG_LEVEL    |  No   | INFO | Logging level for the exporter (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+
+## Scraping the exporter from Prometheus
+Adding the following configuration to your prometheus.yaml config file, should result in the exporter being scraped and metrics existing Prometheus
+
+```bash
+  - job_name: speedtest
+    static_configs:
+      - targets:
+          - speedtest_exporter:8080
+```
+
+These should result in the following metrics existing in prometheus
+
+![Prometheus Metrics](./img/metrics.png)
+
+## Grafana dashboard Example
+
+### Dashboard JSON
+
+[Json](./grafana-dashboard.json)
+
+
+### Dashboard Screenshot
+![Dashboard](./img/dashboard.png)
