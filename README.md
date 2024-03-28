@@ -31,7 +31,7 @@ The exporter expects the following environment variables:
 | LOG_LEVEL    |  No   | INFO | Logging level for the exporter (DEBUG, INFO, WARNING, ERROR, CRITICAL)
 
 ## Scraping the exporter from Prometheus
-Adding the following configuration to your prometheus.yaml config file, should result in the exporter being scraped and metrics existing Prometheus
+Adding the following configuration to your prometheus.yaml config file, should result in the exporter being scraped:
 
 ```bash
   - job_name: speedtest
