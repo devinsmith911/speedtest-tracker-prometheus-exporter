@@ -21,10 +21,18 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - 
+        name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: devinsmith/speedtest-prometheus-exporter
+          tags: |
+            type=semver,pattern={{version}}
       -
         name: Build and push
         uses: docker/build-push-action@v5
         with:
           push: true
           platforms: linux/arm64, linux/amd64
-          tags: devinsmith/speedtest-prometheus-exporter:${GITHUB_REF##*/}
+          tags: ${{ steps.meta.outputs.tags }}
