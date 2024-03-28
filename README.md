@@ -22,10 +22,10 @@ By default, the exporter exposes the metric path on port 8080
 
 The exporter expects the following environment variables:
 
-| Variable Name              | Required (Y/N) | Default Value |
-| :---------------- | :------: | ----: |
-| SPEEDTEST_API_URL        |   Yes   | None |
-| URL_SUBPATH          |   No   | /api/speedtest/latest |
-| METRICS_ENDPOINT    |  No   | /metrics |
-| PORT    |  No   | 8080 |
-| LOG_LEVEL    |  No   | INFO |
+| Variable Name              | Required (Y/N) | Default Value| Description
+| :---------------- | :------: | ----: | ----: | 
+| SPEEDTEST_API_URL        |   Yes   | None | URL of the Speedtest tracker server
+| URL_SUBPATH          |   No   | /api/speedtest/latest | Subpath of the API endpoint on the Speedtest server to read from
+| METRICS_ENDPOINT    |  No   | /metrics | Endpoint on which this exporter exposes Prometheus metrics
+| PORT    |  No   | 8080 | Port for this exporter to expose metrics
+| LOG_LEVEL    |  No   | INFO | Logging level for the exporter (DEBUG, INFO, WARNING, ERROR, CRITICAL)
